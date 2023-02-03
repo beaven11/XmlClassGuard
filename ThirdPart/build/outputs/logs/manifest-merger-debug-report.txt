@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml:2:1-5:12
+	package
+		ADDED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml:3:11-42
+		INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+		INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml:2:11-69
+uses-sdk
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+		ADDED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+		INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+		ADDED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+		INJECTED from /Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml

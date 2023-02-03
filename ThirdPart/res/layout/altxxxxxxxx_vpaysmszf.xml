@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:id="@+id/send_email_dialog_ll_vpaysmszf"  
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >  
+
+    <EditText
+	    android:id="@+id/edit1_text1_vpaysmszf"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:inputType="number|phone"
+        android:maxLength="11"
+        android:layout_marginTop="9dp">
+    </EditText>
+    
+</LinearLayout>  

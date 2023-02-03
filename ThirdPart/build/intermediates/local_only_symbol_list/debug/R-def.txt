@@ -1,0 +1,18 @@
+R_DEF: Internal format may change without notice
+local
+drawable consume1_yhxf
+drawable ic_launcher_vpaysmszf
+drawable yhxfcolse
+drawable yhxfv
+id InfoSms_btn_vpaysmszf
+id edit1_text1_vpaysmszf
+id image2_vpaysmszf
+id imageButton1_vpaysmszf
+id send_email_dialog_ll_vpaysmszf
+id stxt3_vpaysmszf
+id stxt4_vpaysmszf
+id stxt5_vpaysmszf
+layout altxxxxxxxx_vpaysmszf
+layout yhxfpay
+string app_name_yhxfpay
+style transcutestyle_yhxf

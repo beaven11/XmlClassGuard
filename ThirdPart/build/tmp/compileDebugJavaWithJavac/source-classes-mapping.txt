@@ -1,0 +1,2 @@
+com/support/thirdpart/BuildConfig.java
+ com.support.thirdpart.BuildConfig

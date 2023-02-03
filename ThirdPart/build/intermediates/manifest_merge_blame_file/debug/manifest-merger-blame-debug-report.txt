@@ -1,0 +1,10 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.support.thirdpart" > <!-- <uses-sdk android:minSdkVersion="14"/> -->
+4    <uses-sdk
+5        android:minSdkVersion="21"
+5-->/Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+6        android:targetSdkVersion="29" />
+6-->/Users/wangpeifeng/Code/MmCode/meme-android/ThirdPart/AndroidManifest.xml
+7
+8</manifest>

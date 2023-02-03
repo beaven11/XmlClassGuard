@@ -22,3 +22,4 @@ rootProject.name = "XmlClassGuard"
 include ':app'
 include ':plugin'
 include ':base'
+include ':ThirdPart'

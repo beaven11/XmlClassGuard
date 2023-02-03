@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name_yhxfpay">大额短信支付</string>
+    <style name="transcutestyle_yhxf" parent="@android:style/Theme.Dialog">
+         <item name="android:windowFrame">@android:color/transparent</item><!--边框-->
+         <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+         <item name="android:windowIsTranslucent">true</item><!--半透明-->
+         <item name="android:windowNoTitle">true</item><!--无标题-->
+         <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+         <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowAnimationStyle">@null</item>
+     </style>
+</resources>

@@ -1,0 +1,6 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation" >
+     <string name="app_name_yhxfpay">大额短信支付</string>
+</resources>
+
