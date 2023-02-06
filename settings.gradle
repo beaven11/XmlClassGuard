@@ -1,4 +1,5 @@
 pluginManagement {
+    apply from: 'version.gradle'
     repositories {
         gradlePluginPortal()
         google()
@@ -8,6 +9,10 @@ pluginManagement {
         }
         maven { url 'https://jitpack.io' }
         maven { url 'https://raw.githubusercontent.com/martinloren/AabResGuard/mvn-repo' }
+        maven {
+            url 'http://192.168.31.241:8081/artifactory/maven'
+            allowInsecureProtocol = true
+        }
     }
 }
 dependencyResolutionManagement {

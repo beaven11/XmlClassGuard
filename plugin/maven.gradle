@@ -1,12 +1,32 @@
+apply plugin: "com.jfrog.artifactory"
 apply plugin: 'maven-publish'
 
 publishing {
     publications {
         release(MavenPublication) {
             from components.java
-            groupId 'com.github.liujingxing'
+            groupId 'com.github.liujingxing.mmjy'
             artifactId 'XmlClassGuard'
             version "$plugin_version"
+        }
+    }
+}
+
+artifactoryPublish {
+    publications(publishing.publications.release)
+}
+
+artifactoryPublish.dependsOn('build')
+
+artifactory {
+    contextUrl = "${artifactory_url}"
+    //The base Artifactory URL if not overridden by the publisher/resolver
+    publish {
+        repository {
+            repoKey = 'mmjy_maven'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
         }
     }
 }

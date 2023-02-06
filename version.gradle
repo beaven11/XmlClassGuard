@@ -1,0 +1,5 @@
+def properties = new Properties()
+properties.load(new FileInputStream(file("local.properties")))
+ext["artifactory_user"] = properties.getProperty("artifactory_user")
+ext["artifactory_password"] = properties.getProperty("artifactory_password")
+ext["artifactory_url"] = properties.getProperty("artifactory_url")
