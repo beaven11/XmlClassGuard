@@ -42,17 +42,6 @@ android {
     }
 }
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
-
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.umeng.umsdk:common:9.5.1'
-    api 'com.umeng.umsdk:asms:1.5.0'
-    api 'com.umeng.umsdk:apm:1.7.0'
-    api 'com.tencent.tbs:tbssdk:44216'
-    api(name: 'smsdk_2.9.8_build16', ext: 'aar')
 }

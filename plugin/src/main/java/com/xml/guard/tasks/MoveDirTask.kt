@@ -1,12 +1,7 @@
 package com.xml.guard.tasks
 
 import com.xml.guard.entensions.GuardExtension
-import com.xml.guard.utils.allDependencyAndroidProjects
-import com.xml.guard.utils.insertImportXxxIfAbsent
-import com.xml.guard.utils.javaDir
-import com.xml.guard.utils.manifestFile
-import com.xml.guard.utils.replaceWords
-import com.xml.guard.utils.resDir
+import com.xml.guard.utils.*
 import groovy.xml.XmlParser
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project

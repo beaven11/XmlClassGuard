@@ -1,5 +1,6 @@
 package com.xml.guard.utils
 
+import com.android.build.gradle.BaseExtension
 import groovy.util.Node
 import groovy.util.NodeList
 import groovy.xml.XmlParser
@@ -27,11 +28,29 @@ val whiteList = arrayListOf(
     "GridLayout", "GridView",
 )
 
-fun Project.javaDir(path: String = ""): File = file("src/main/java/$path")
+fun Project.javaDir(path: String = ""): File {
+    // file("src/main/java/$path")
+    val extension = extensions.getByName("android") as BaseExtension
+    val sourceSet = extension.sourceSets.findByName("main")
+    return sourceSet?.java?.srcDirs?.iterator()?.next()?.let {
+        File(it, path)
+    } ?: file("src/main/java/$path")
+}
 
-fun Project.resDir(path: String = ""): File = file("src/main/res/$path")
+fun Project.resDir(path: String = ""): File {
+    // file("src/main/res/$path")
+    val extension = extensions.getByName("android") as BaseExtension
+    val sourceSet = extension.sourceSets.findByName("main")
+    return sourceSet?.res?.srcDirs?.iterator()?.next()?.let {
+        File(it, path)
+    } ?: file("src/main/res/$path")
+}
 
-fun Project.manifestFile(): File = file("src/main/AndroidManifest.xml")
+fun Project.manifestFile(): File {
+    val extension = extensions.getByName("android") as BaseExtension
+    val sourceSet = extension.sourceSets.findByName("main")
+    return sourceSet?.manifest?.srcFile ?: file("src/main/AndroidManifest.xml")
+}
 
 fun Project.javaTree(path: String = ""): ConfigurableFileTree = fileTree("src/main/java/$path")
 
@@ -40,14 +59,12 @@ fun Project.resTree(path: String = ""): ConfigurableFileTree = fileTree("src/mai
 
 //查找依赖的Android Project，也就是子 module，包括间接依赖的子 module
 fun Project.findDependencyAndroidProject(
-    projects: MutableList<Project>,
-    names: List<String> = mutableListOf("api", "implementation")
+    projects: MutableList<Project>, names: List<String> = mutableListOf("api", "implementation")
 ) {
     names.forEach { name ->
-        val dependencyProjects = configurations.getByName(name).dependencies
-            .filterIsInstance<DefaultProjectDependency>()
-            .filter { it.dependencyProject.isAndroidProject() }
-            .map { it.dependencyProject }
+        val dependencyProjects =
+            configurations.getByName(name).dependencies.filterIsInstance<DefaultProjectDependency>()
+                .filter { it.dependencyProject.isAndroidProject() }.map { it.dependencyProject }
         projects.addAll(dependencyProjects)
         dependencyProjects.forEach {
             it.findDependencyAndroidProject(projects, mutableListOf("api"))
@@ -56,8 +73,7 @@ fun Project.findDependencyAndroidProject(
 }
 
 fun Project.isAndroidProject() =
-    plugins.hasPlugin("com.android.application")
-            || plugins.hasPlugin("com.android.library")
+    plugins.hasPlugin("com.android.application") || plugins.hasPlugin("com.android.library")
 
 //查找dir所在的Project，dir不存在，返回null
 fun Project.findLocationProject(dir: String): Project? {
@@ -116,9 +132,7 @@ fun findClassByManifest(text: String, classPaths: MutableList<String>, namespace
     for (children in applicationNode.children()) {
         val childNode = children as? Node ?: continue
         val childName = childNode.name()
-        if ("activity" == childName || "service" == childName ||
-            "receiver" == childName || "provider" == childName
-        ) {
+        if ("activity" == childName || "service" == childName || "receiver" == childName || "provider" == childName) {
             val name = childNode.attribute("android:name").toString()
             val classPath = if (name.startsWith(".")) packageName + name else name
             classPaths.add(classPath)
